@@ -1,0 +1,42 @@
+.page-wrapper.grid {
+    display: grid;
+    grid-template-rows: min-content 1fr 5rem;
+    height: 100%;
+}
+
+header { 
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    align-items: center;
+    padding: 1rem;
+
+    h1 {
+        white-space: nowrap;
+    }
+
+    theme-switcher {
+        justify-self: end;
+    }
+}
+
+main {
+    padding: 1rem;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+@media only screen and (max-width: 580px) { 
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        h1 {
+            display: none;
+        }
+    }
+}

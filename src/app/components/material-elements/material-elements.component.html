@@ -1,0 +1,64 @@
+<mat-card>
+    <mat-card-title>Buttons</mat-card-title>   
+    <mat-card-content class="buttons">       
+        <button mat-raised-button>Basic</button>
+        <button mat-raised-button color="primary">Primary</button>
+        <button mat-raised-button color="accent">Accent</button>
+        <button mat-raised-button color="warn">Warn</button>
+        <button mat-raised-button disabled>Disabled</button>
+        <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>    
+    </mat-card-content>
+</mat-card>
+
+<mat-card>
+    <mat-card-title>Chips</mat-card-title>   
+    <mat-card-content>
+        <mat-chip-list aria-label="Fish selection">
+            <mat-chip>One fish</mat-chip>
+            <mat-chip>Two fish</mat-chip>
+            <mat-chip color="primary" selected>Primary fish</mat-chip>
+            <mat-chip color="accent" selected>Accent fish</mat-chip>
+          </mat-chip-list>
+    </mat-card-content>
+</mat-card>
+
+<mat-card>
+    <mat-card-title>Radio buttons</mat-card-title>   
+    <mat-card-content>
+        <mat-radio-group>
+            <mat-radio-button value="1" selected="true">Option 1</mat-radio-button>
+            <mat-radio-button value="2">Option 2</mat-radio-button>
+        </mat-radio-group>
+    </mat-card-content>
+</mat-card>
+
+<mat-card>
+    <mat-card-title>Input fields</mat-card-title>   
+    <mat-card-content>
+        <form>
+            <mat-form-field>
+              <mat-label>Favorite food</mat-label>
+              <input matInput placeholder="Ex. Pizza" value="Sushi">
+            </mat-form-field>
+          
+            <mat-form-field>
+              <mat-label>Leave a comment</mat-label>
+              <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+</mat-card>
+
+<mat-card>
+    <mat-card-title>Progress bar</mat-card-title>   
+    <mat-card-content>
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>  
+    </mat-card-content>
+</mat-card>
+
+<mat-card>
+    <mat-card-title>Spinner</mat-card-title>   
+    <mat-card-content>
+        <mat-spinner></mat-spinner>
+    </mat-card-content>
+</mat-card>

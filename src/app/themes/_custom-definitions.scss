@@ -1,0 +1,7 @@
+@import './custom-palette';
+
+@mixin background {
+    &.mat-app-background {
+        background-color: map-get($steelblue-palette, 900) !important;
+    }
+}

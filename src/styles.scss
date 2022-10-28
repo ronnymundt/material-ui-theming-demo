@@ -1,0 +1,24 @@
+@import './app/themes/theme-settings';
+
+// HTML defaults
+html, body { height: 100%; }
+body { 
+  margin: 0; 
+  font-family: Roboto, 
+  "Helvetica Neue", sans-serif; 
+  height: 100%;
+}
+
+h1, h2, h3, h4 {
+  margin: 0 !important;
+}
+
+// MAT RADIO BUTTONS
+.mat-radio-label-content  {
+  padding-right: 8px !important;
+}
+
+// MAT SPINNER
+.mat-progress-spinner[mode=indeterminate] circle {
+  animation-duration: 7000ms !important; // spin slower
+}

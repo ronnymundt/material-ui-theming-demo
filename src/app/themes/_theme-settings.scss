@@ -1,0 +1,42 @@
+@use '@angular/material' as mat;
+@use  './custom-definitions' as cus;
+@import './theme-variables';
+
+@include mat.core();
+
+// DARK
+.dark-theme {
+  @include mat.all-component-colors($dark-theme);
+
+  .page-wrapper {
+    footer,
+    header { 
+      background-color: map-get($dark-primary, 900);
+    }
+  }
+}
+
+// LIGHT
+.light-theme { 
+  @include mat.all-component-colors($light-theme);
+
+  .page-wrapper {
+    footer,
+    header { 
+      background-color: map-get($light-primary, 100);
+    }
+  }
+}
+
+// CUSTOM
+.custom-theme {  
+  @include cus.background;
+  @include mat.all-component-colors($custom-theme); 
+  
+  .page-wrapper {
+    footer,
+    header { 
+      background-color: map-get($custom-primary, 900);
+    }
+  }
+}
