@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-material-theming-demo:build:production"
+              "buildTarget": "angular-material-theming-demo:build:production"
             },
             "development": {
-              "browserTarget": "angular-material-theming-demo:build:development"
+              "buildTarget": "angular-material-theming-demo:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-material-theming-demo:build"
+            "buildTarget": "angular-material-theming-demo:build"
           }
         },
         "test": {
@@ -106,7 +106,6 @@
     }
   },
   "cli": {
-    "defaultCollection": "@ngrx/schematics",
     "schematicCollections": [
       "@ngrx/schematics"
     ]
