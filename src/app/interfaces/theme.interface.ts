@@ -1,4 +1,4 @@
-import { TTheme } from "../types/theme.type";
+import { TTheme } from "../types";
 
 export interface ITheme {
     name: string,

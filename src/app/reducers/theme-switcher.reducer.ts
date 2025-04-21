@@ -1,7 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
 import { changeThemeAction } from '../actions/theme-switcher.actions';
-import {defaultThemeSetup} from '../classes/theme-switcher';
-import { IThemeState } from '../interfaces/theme.interface';
+import {defaultThemeSetup} from '../configs';
+import { IThemeState } from '../interfaces';
 
 export const themeSwitcherFeatureKey = 'themeSwitcher';
 

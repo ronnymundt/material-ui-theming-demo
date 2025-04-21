@@ -1,4 +1,4 @@
-import {ITheme} from '../interfaces/theme.interface';
+import {ITheme} from '../interfaces';
 
 export const defaultThemeSetup: ITheme[] = [
     {

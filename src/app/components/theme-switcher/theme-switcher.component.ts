@@ -4,7 +4,7 @@ import {MatRadioChange, MatRadioModule} from '@angular/material/radio';
 import { Store } from '@ngrx/store';
 import { map } from 'rxjs';
 import { changeThemeAction } from '../../actions/theme-switcher.actions';
-import { ITheme, IThemeState } from '../../interfaces/theme.interface';
+import { ITheme, IThemeState } from '../../interfaces';
 import { selectTheme } from '../../selectors/theme-switcher.selectors';
 
 @Component({
