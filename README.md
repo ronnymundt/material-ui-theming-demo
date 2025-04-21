@@ -1,11 +1,37 @@
-# Material UI Theming Demo
+# Angular Material Theming Switcher 🎨🌓
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.
+Ein kleines Angular 19 Projekt zur Demonstration von **Angular Material Theming** mit Live-Wechsel 
+zwischen drei Themes: **Light**, **Dark** und einem **Custom-Theme**. 
+Die Auswahl wird mithilfe von **NgRx Signal Store** verwaltet.
 
-## Screenshots
+## 🛠️ Technologien
 
-![Screenshot](/src/assets/screenshot_1.png)
+- Angular 19
+- Angular Material
+- SCSS Theme-Customization
+- NgRx Signal Store
+- TypeScript
 
-![Screenshot](/src/assets/screenshot_2.png)
+## ✨ Features
 
-![Screenshot](/src/assets/screenshot_3.png)
+- Dynamischer Theme-Switcher mit drei Themes:
+    - 🌞 Light Theme
+    - 🌚 Dark Theme
+    - 🎨 Custom Theme (benutzerdefinierte Farben)
+- State-Management mit dem neuen Signal Store von NgRx
+- UI-Komponenten mit Angular Material
+- Theme-Auswahl bleibt über den gesamten App-Kontext bestehen
+- Saubere Struktur zur einfachen Erweiterung weiterer Themes
+
+## 🚀 Lokales Setup
+
+```
+git clone https://github.com/dein-nutzername/angular-theme-switcher.git
+cd angular-theme-switcher
+npm install
+ng serve
+```
+
+## 📸 Screenshots
+
+![Screencast](/src/assets/screencast.gif)
