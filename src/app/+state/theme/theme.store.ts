@@ -1,16 +1,17 @@
-import { computed, effect, inject } from '@angular/core';
+import { computed } from '@angular/core';
 import {
   patchState,
   signalStore,
-  withComputed, withHooks,
+  withComputed,
   withMethods,
-  withState
+  withState,
 } from '@ngrx/signals';
-import { defaultThemeSetup } from '../../configs';
+import { defaultThemes } from '../../configs';
 import { ITheme } from '../../interfaces';
+import {IThemeState} from './theme.model';
 
-const initialThemeState = {
-  themes: defaultThemeSetup,
+const initialThemeState: IThemeState = {
+  themes: defaultThemes,
 };
 
 export const ThemeStore = signalStore(
@@ -33,17 +34,4 @@ export const ThemeStore = signalStore(
       store.themes().find((theme) => theme.isSelected),
     ),
   })),
-  // hooks
-  withHooks({
-    onInit(store) {
-      effect(() => {
-        const selected = store.selectSelectedTheme();
-
-        // console.log('Selected theme changed:', selected);
-
-        /*store.themes().map(x => renderer2.removeClass(document.body, x.theme)); // remove all themes
-        const t = store.themes().find(theme => theme.isSelected) ?? store.themes()[0]; // get selected theme
-        renderer2.addClass(document.body, t.theme); // add selected theme*/
-      });
-    }})
 );

@@ -1,7 +1,7 @@
 <mat-radio-group (change)="onRadioChangeTheme($event)">
-  @for(theme of selectedThemes(); track theme.name) {
+  @for (theme of selectedThemes(); track theme.name) {
     <mat-radio-button [value]="theme.theme" [checked]="theme.isSelected">
-      <span> {{theme.name}} </span>
+      <span> {{ theme.name }} </span>
     </mat-radio-button>
   }
 </mat-radio-group>

@@ -1,6 +1,6 @@
-@use '@angular/material' as mat;
-@use  './custom-definitions' as cus;
-@use './theme-variables' as vars;
+@use "@angular/material" as mat;
+@use "./custom-definitions" as cus;
+@use "./theme-variables" as vars;
 
 @include mat.core();
 
@@ -10,33 +10,36 @@
 
   .page-wrapper {
     footer,
-    header { 
+    header {
       background-color: mat.m2-get-color-from-palette(vars.$dark-primary, 900);
     }
   }
 }
 
 // LIGHT
-.light-theme { 
+.light-theme {
   @include mat.all-component-colors(vars.$light-theme);
 
   .page-wrapper {
     footer,
-    header { 
+    header {
       background-color: mat.m2-get-color-from-palette(vars.$light-primary, 100);
     }
   }
 }
 
 // CUSTOM
-.custom-theme {  
+.custom-theme {
   @include cus.background;
   @include mat.all-component-colors(vars.$custom-theme);
-  
+
   .page-wrapper {
     footer,
-    header { 
-      background-color: mat.m2-get-color-from-palette(vars.$custom-primary, 900);
+    header {
+      background-color: mat.m2-get-color-from-palette(
+        vars.$custom-primary,
+        900
+      );
     }
   }
 }

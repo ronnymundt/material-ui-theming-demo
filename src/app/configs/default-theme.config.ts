@@ -1,6 +1,6 @@
 import {ITheme} from '../interfaces';
 
-export const defaultThemeSetup: ITheme[] = [
+export const defaultThemes: ITheme[] = [
     {
         name: "Dark",
         theme: "dark-theme",

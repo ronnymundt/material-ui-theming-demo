@@ -1,26 +1,26 @@
 :host {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
 }
 
 .buttons {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 1rem;
 }
 
 mat-card-content {
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    form {
-        width: min-content;
-    }
+  form {
+    width: min-content;
+  }
 }
 
 .calender {
-    width: 300px;
+  width: 300px;
 }

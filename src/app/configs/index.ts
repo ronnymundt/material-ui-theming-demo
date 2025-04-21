@@ -1,1 +1,1 @@
-export * from './theme-switcher.config';
+export * from './default-theme.config';
