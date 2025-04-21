@@ -1,7 +1,8 @@
-import { Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
+import {Component, DestroyRef, OnInit, Renderer2} from '@angular/core';
+import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 import {MatRadioChange, MatRadioModule} from '@angular/material/radio';
 import { Store } from '@ngrx/store';
-import { map, Subscription } from 'rxjs';
+import { map } from 'rxjs';
 import { changeThemeAction } from '../../actions/theme-switcher.actions';
 import { ITheme, IThemeState } from '../../interfaces/theme.interface';
 import { selectTheme } from '../../selectors/theme-switcher.selectors';
@@ -14,50 +15,39 @@ import { selectTheme } from '../../selectors/theme-switcher.selectors';
   ],
   styleUrls: ['./theme-switcher.component.scss']
 })
-export class ThemeSwitcherComponent implements OnInit, OnDestroy {
-  // PRIVATES
-  private _sub: Subscription = Subscription.EMPTY;
-
-  // PUBLIC
-  public themes: Array<ITheme> = new Array<ITheme>();
+export class ThemeSwitcherComponent implements OnInit {
+  themes: ITheme[] = [];
 
   constructor(
-    private _render: Renderer2,
-    private _themeStore: Store<IThemeState>
+    private render: Renderer2,
+    private themeStore: Store<IThemeState>,
+    private readonly destroyRef: DestroyRef
   ) { } 
 
-  ngOnInit(): void { 
-    this._initSubscriptions();
+  ngOnInit() { 
+    this.initSubs();
   }
 
-  ngOnDestroy(): void {
-    this._sub.unsubscribe();
-  } 
-
   /**
-   * Methode init. die Subscribtions.
+   * Methode init. die Subscriptions.
    */
-  private _initSubscriptions(): void {
-    this._sub = this._themeStore.select(selectTheme).pipe(
+  private initSubs() {
+    this.themeStore.select(selectTheme).pipe(
+      takeUntilDestroyed(this.destroyRef),
       map(x => x.themes)
-    ).subscribe((themes: Array<ITheme>) => {
+    ).subscribe((themes: ITheme[]) => {
       this.themes = themes;
-      this._setThemeToBodyByThemes(themes);
+      this.setThemeToBodyByThemes();
     });
   }
 
   /**
    * Methode setzt die Theme auf den Page Body.
-   * @param themes 
    */
-  private _setThemeToBodyByThemes(themes: Array<ITheme>): void {
-    for(let theme of themes) {
-      if(theme.isSelected) {
-        this._render.addClass(document.body, theme.theme);
-      } else {
-        this._render.removeClass(document.body, theme.theme);
-      }
-    }
+  private setThemeToBodyByThemes() {
+    this.themes.map(x => this.render.removeClass(document.body, x.theme)); // remove all themes
+    const t = this.themes.find(theme => theme.isSelected) ?? this.themes[0]; // get selected theme
+    this.render.addClass(document.body, t.theme); // add selected theme
   }
 
   // EVENTS  
@@ -66,13 +56,13 @@ export class ThemeSwitcherComponent implements OnInit, OnDestroy {
    * Event triggert beim Wechsel der Radio Button
    * @param event 
    */
-  public onRadioChangeTheme(event: MatRadioChange): void {   
+  onRadioChangeTheme(event: MatRadioChange) {
     const theme: ITheme = {
       isSelected: true,
       name: event.source.name,
       theme: event.value
     }
 
-    this._themeStore.dispatch(changeThemeAction({ theme: theme }));    
+    this.themeStore.dispatch(changeThemeAction({ theme: theme }));
   }
 }

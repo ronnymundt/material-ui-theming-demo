@@ -1,29 +1,29 @@
 @use '@angular/material' as mat;
 @use  './custom-definitions' as cus;
-@import './theme-variables';
+@use './theme-variables' as vars;
 
 @include mat.core();
 
 // DARK
 .dark-theme {
-  @include mat.all-component-colors($dark-theme);
+  @include mat.all-component-colors(vars.$dark-theme);
 
   .page-wrapper {
     footer,
     header { 
-      background-color: map-get($dark-primary, 900);
+      background-color: mat.m2-get-color-from-palette(vars.$dark-primary, 900);
     }
   }
 }
 
 // LIGHT
 .light-theme { 
-  @include mat.all-component-colors($light-theme);
+  @include mat.all-component-colors(vars.$light-theme);
 
   .page-wrapper {
     footer,
     header { 
-      background-color: map-get($light-primary, 100);
+      background-color: mat.m2-get-color-from-palette(vars.$light-primary, 100);
     }
   }
 }
@@ -31,12 +31,12 @@
 // CUSTOM
 .custom-theme {  
   @include cus.background;
-  @include mat.all-component-colors($custom-theme); 
+  @include mat.all-component-colors(vars.$custom-theme);
   
   .page-wrapper {
     footer,
     header { 
-      background-color: map-get($custom-primary, 900);
+      background-color: mat.m2-get-color-from-palette(vars.$custom-primary, 900);
     }
   }
 }

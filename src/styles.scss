@@ -1,4 +1,4 @@
-@import './app/themes/theme-settings';
+@use './app/themes/theme-settings' as theme;
 
 // HTML defaults
 html, body { height: 100%; }

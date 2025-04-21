@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatChipsModule} from '@angular/material/chips';
@@ -23,11 +23,4 @@ import {MatRadioModule} from '@angular/material/radio';
   ],
   styleUrls: ['./material-elements.component.scss']
 })
-export class MaterialElementsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class MaterialElementsComponent { }

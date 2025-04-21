@@ -1,5 +1,7 @@
 <mat-radio-group (change)="onRadioChangeTheme($event)">
-    <mat-radio-button *ngFor="let theme of themes" [value]="theme.theme" [checked]="theme.isSelected">
-        <span> {{theme.name}} </span>        
-    </mat-radio-button>   
+  @for(theme of themes; track theme.name) {
+    <mat-radio-button [value]="theme.theme" [checked]="theme.isSelected">
+      <span> {{theme.name}} </span>
+    </mat-radio-button>
+  }
 </mat-radio-group>

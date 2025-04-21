@@ -1,7 +1,8 @@
-@import './custom-palette';
+@use '@angular/material' as mat;
+@use './custom-palette' as pal;
 
 @mixin background {
     &.mat-app-background {
-        background-color: map-get($steelblue-palette, 900) !important;
+        background-color: mat.m2-get-color-from-palette(pal.$steelblue-palette, 900) !important;
     }
 }

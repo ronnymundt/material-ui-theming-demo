@@ -7,5 +7,5 @@ export interface ITheme {
 }
 
 export interface IThemeState {
-    themes: Array<ITheme>
+    themes: ITheme[]
 }
