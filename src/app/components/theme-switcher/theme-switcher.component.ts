@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
-import { MatRadioChange, MatRadioButton } from '@angular/material/radio';
+import {MatRadioChange, MatRadioModule} from '@angular/material/radio';
 import { Store } from '@ngrx/store';
 import { map, Subscription } from 'rxjs';
 import { changeThemeAction } from '../../actions/theme-switcher.actions';
@@ -9,6 +9,9 @@ import { selectTheme } from '../../selectors/theme-switcher.selectors';
 @Component({
   selector: 'theme-switcher',
   templateUrl: './theme-switcher.component.html',
+  imports: [
+    MatRadioModule
+  ],
   styleUrls: ['./theme-switcher.component.scss']
 })
 export class ThemeSwitcherComponent implements OnInit, OnDestroy {
